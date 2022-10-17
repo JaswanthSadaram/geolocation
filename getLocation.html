@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 id="demo"></h1>
+
+<script>
+const intervalID = setInterval(getLiveLocation,60000);
+function getLiveLocation()
+{
+ navigator.geolocation.getCurrentPosition(function(pos){
+    console.log(pos.coords.latitude);
+      console.log(pos.coords.longitude);
+     var d=document.getElementById('demo');
+     d.innerHTML="Latitude: "+pos.coords.latitude+"<br> Longitude: "+pos.coords.longitude;
+});
+}
+</script>
+
+</body>
+</html>
+
